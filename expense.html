@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expense Calculator</title>
+	<!-- <link rel="stylesheet" type="text/css" href="expense.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
+	<style>
+		.display{
+	text-align: center;
+	font-size:30px;
+	color:navy;
+}
+ .total{
+	text-align:center;
+	font-size:30px;
+	margin-top:10px;
+}
+
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Xpers</span>
+			<span class="navbar-brand mb-0 h1 total"></span>
+		</nav>
+		<div class="container-fluid bg-light" style="min-height: 100vh">
+			
+			<div class="container">
+				<!-- <div class="container">
+		<div class="total"></div>
+		 -->
+			<!-- <input type="text" name="amount" id="amount"> -->
+			<!-- <div class="add">+</div><br/> -->
+			<!-- <input type="text" name="product" id="product"> -->
+			<!-- <div class="add"><strong>+</strong></div><br/> -->
+	<!-- </div> -->
+				<div class="jumbotron mt-4">
+					<div class="input-group mb-3">
+						<input
+						    id="amount"
+							type="text"
+							class="form-control"
+							placeholder="Amount spent"
+							aria-label="Amount spent"
+							aria-describedby="spent in rupee"
+						/>
+						<div class="input-group-append">
+							<span class="input-group-text" id="spent in rupee">₹</span>
+						</div>
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="spent at">@</span>
+						</div>
+						<input
+						    id="product"
+							type="text"
+							class="form-control"
+							placeholder="spent On"
+							aria-label="spent On"
+							aria-describedby="spent at"
+						/>
+						<div class="input-group-append"> 
+							<button class="btn btn-outline-primary" type="button" id="add">Add</button>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<ul class="list-group display">
+						<!-- <li class="list-group-item d-flex justify-content-between">
+							<div class="d-flex flex-column">
+								Tshirt
+								<small class="text-muted">March 11, 2019</small>
+							</div>
+							<div>
+								<span class="px-5">
+									500
+								</span>
+								<button type="button" class="btn btn-outline-danger btn-sm">
+									<i class="fas fa-trash-alt"></i>
+								</button>
+							</div>
+						</li> -->
+						<!-- <li class="list-group-item d-flex justify-content-between"> -->
+							<!-- <div class="d-flex flex-column">
+								Movie
+								<small class="text-muted">Feb 12, 2019</small>
+							</div>
+							<div>
+								<span class="px-5">
+									1500
+								</span> -->
+								<!-- <button type="button" class="btn btn-outline-danger btn-sm">
+									<i class="fas fa-trash-alt"></i> -->
+
+								<!-- </button> -->
+								<!-- <div class="display"></div> -->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+
+	<!-- 			
+	<div class="container">
+		<div class="total"></div>
+		<form class="form">
+			<input type="text" name="amount" id="amount">
+			<div class="add">+</div><br/>
+			<input type="text" name="product" id="product">
+			<div class="add"><strong>+</strong></div><br/>
+
+		</form>
+		
+		<div class="display"></div>
+	</div> -->
+ --
+
+</body>
+ <script type="text/javascript" src="js/expense.js"></script>
+
+<script type="text/javascript" src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+			integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+			crossorigin="anonymous"></script>
+
+	
+
+</html>
