@@ -47,7 +47,10 @@ add.addEventListener('click', function () {
 
 						</li>`;
             display.innerHTML = template + display.innerHTML;
-        
+        totalExpense = parseInt(amount) + totalExpense;
+        var someText = `Total:${totalExpense}`
+        total.textContent= someText;
+        position++;
 
       // console.log(template)
       
@@ -57,11 +60,7 @@ add.addEventListener('click', function () {
      
       
 
-      totalExpense = parseInt(amount)+totalExpense;
-      console.log(totalExpense)
-      var someText = `Total:${totalExpense}`
-      total.textContent= someText;
-
+      
 
       }
       
