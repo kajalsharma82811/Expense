@@ -4,6 +4,8 @@ var inputAmount = document.querySelector('#amount')
 var inputProduct = document.querySelector('#product')
 var display = document.querySelector(".display")
 console.log(display)
+// var button = document.querySelector("#deleteItem")
+// console.log(button)
 
 var total = document.querySelector('.total')
 let totalExpense = 0;
@@ -61,18 +63,17 @@ add.addEventListener('click',function(){
 									
 								</span>
 								<button type="button" 
-                                class="btn btn-outline-danger btn-sm button" 
-                                onclick="deleteItem()"
+                        class="btn btn-outline-danger btn-sm button" 
+                                id="deleteItem"
                                 >
 									<i class="fas fa-trash-alt"></i>
 								</button>
 							</div>
 						</li>`
       // console.log(template)
-      display.innerHTML=template;
-      function deleteItem(){
-      	console.log(`deleteitem`)
-      }
+      display.insertAdjacentHTML('beforeend',template);
+      
+
 
 
       
@@ -89,4 +90,18 @@ add.addEventListener('click',function(){
       
       
 })
+
+var button = document.querySelector("#deleteItem")
+console.log(button)//null
+button.addEventListener('click',function(){
+  display.immerHTML=""
+
+})
+
+
+
+
+
+
+
 
