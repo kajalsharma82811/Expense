@@ -3,54 +3,24 @@ var add = document.querySelector('#add')
 var inputAmount = document.querySelector('#amount')
 var inputProduct = document.querySelector('#product')
 var display = document.querySelector(".display")
-console.log(display)
-
 var total = document.querySelector('.total')
 let totalExpense = 0;
-var expenseItema = [];
-add.addEventListener('click',function(){
+var position = 0;
+function deleteItem(position) {
+    let li = document.querySelector('#unique-generated-id-' + position);
+    li.remove();
 
-      function deleteItem(){
-      	console.log(`hi delete`)
-      }
-	
-	
-
-
-	 var amount = inputAmount.value
-     //console.log(parseInt(amount))
-     var product = inputProduct.value
-     
-     //console.log(product)
-      if(amount==""&product==""){
-      	alert("Enter amount and product")
-      }else{
-      	var expenseItem = {};
-      	expenseItem.amount = amount;
-      	expenseItem.product = product;
-      	console.log(expenseItem)
-      	expenseItema.push(expenseItem)
-      	console.table(expenseItema)
-      	// var data1 = expenseItema[0];
-      	// var data2 = expenseItema[1];
-      	// var data1Text = `${data1.amount}  :: ${data1.product}`
-      	// var data2Text = `${data2.amount}  :: ${data2.product}`
-      	// console.log(data1Text)
-     
-      var date = new Date()
-      var year = date.getFullYear()
-      var array = ['Jan','Feb','March','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec']
-      var month = array[date.getMonth()]
-      // var array = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat',]
-      // var day = array[date.getDay()]
-      var d = date.getDate();
-
-    
-      
-
-      var template = "";
-      // template+=`<div>${product}    :      ${amount}</div>`
-     template+=`<li class="list-group-item d-flex justify-content-between">
+}
+add.addEventListener('click', function () {
+    let amount = +inputAmount.value;
+    let product = inputProduct.value.trim();
+    if (isNaN(amount) || product === "") {
+        alert("Enter amount and product")
+    } else {
+        let expenseItem = {}, date = new Date(), year = date.getFullYear(), array = ['Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], month = array[date.getMonth()], d = date.getDate(), template = "";
+        expenseItem.amount = amount;
+        expenseItem.product = product;
+        template += `<li class="list-group-item d-flex justify-content-between" id="unique-generated-id-${position}">
 							<div class="d-flex flex-column">
 								${product}
 								<small class="text-muted">${d} ${month} ${year}</small>
@@ -58,35 +28,19 @@ add.addEventListener('click',function(){
 							<div>
 								<span class="px-5">
 								${amount}
-									
 								</span>
 								<button type="button" 
                                 class="btn btn-outline-danger btn-sm button" 
-                                onclick="deleteItem()"
+                                onclick="deleteItem(${position})"
                                 >
 									<i class="fas fa-trash-alt"></i>
 								</button>
 							</div>
-						</li>`
-      // console.log(template)
-      display.innerHTML=template;
-      function deleteItem(){
-      	console.log(`deleteitem`)
-      }
-
-
-      
-     
-      
-
-      totalExpense = parseInt(amount)+totalExpense;
-      console.log(totalExpense)
-      var someText = `Total:${totalExpense}`
-      total.textContent= someText;
-
-
-      }
-      
-      
-})
+						</li>`;
+        display.innerHTML = template + display.innerHTML;
+        totalExpense = parseInt(amount) + totalExpense;
+        total.textContent = `Total:${totalExpense}`;
+        position++;
+    }
+});
 
